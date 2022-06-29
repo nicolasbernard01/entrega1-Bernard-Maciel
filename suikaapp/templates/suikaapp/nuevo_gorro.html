@@ -1,0 +1,28 @@
+{% extends 'suikaapp/inicio.html' %}
+{% load static %}
+
+{% block contenido %}
+<br>
+<br>
+
+<div class="container" style="text-align: left;" >
+
+    <h1>Agregar gorro:</h1>
+    <br>
+
+
+<form action="" method="post" style="text-align: left;">
+   
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+   <input type="submit" value="Crear Gorro">
+
+
+
+</form>
+</div>
+<br>
+<br>
+{% endblock %}

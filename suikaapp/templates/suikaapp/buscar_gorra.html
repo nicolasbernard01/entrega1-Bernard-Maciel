@@ -1,0 +1,39 @@
+{% extends 'suikaapp/inicio.html' %}
+{% load static %}
+
+
+{% block contenido %}
+
+<div class="container" style="text-align: center;">
+
+
+<h2>Buscar Gorra: <form action="" method="post"></h2>
+
+    {% csrf_token %}
+
+    <input type="text" name="gorra">
+
+    <input type="submit" value="Buscar">
+
+
+
+
+</form>
+
+
+    <h2>Resultado: </h2>
+        
+        <ul>
+            {% for gorra in gorras %}
+            <li>
+            <strong>Color:</strong> {{gorra.color}} <br>
+            <strong>Bordado:</strong> {{gorra.bordado}} <br>
+            <strong>Precio:</strong> ${{gorra.precio}}
+            </li>
+        </ul>{% endfor %}
+    
+</div>
+{% endblock %}
+    
+    
+   

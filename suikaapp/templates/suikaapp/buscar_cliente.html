@@ -1,0 +1,37 @@
+{% extends 'suikaapp/inicio.html' %}
+{% load static %}
+
+
+
+{% block contenido %}
+
+<div class="container" style="text-align: center;">
+
+<h2>Buscar Cliente: <form action="" method="post"></h2>
+
+    {% csrf_token %}
+
+    <input type="text" name="cliente">
+
+    <input type="submit" value="Buscar">
+
+
+
+
+</form>
+
+
+    <h2>Resultado: </h2>
+        
+        <ul>
+            {% for cliente in clientes %}
+            <li>
+            <strong>Nombre:</strong> {{cliente.nombre}} <br>
+            <strong>Apellido:</strong> {{cliente.apellido}} <br>
+            <strong>Email:</strong> {{cliente.email}}
+            </li>
+        </ul>{% endfor %}
+    
+</div>    
+    
+{% endblock %}

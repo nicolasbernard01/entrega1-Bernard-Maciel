@@ -1,0 +1,37 @@
+{% extends 'suikaapp/inicio.html' %}
+{% load static %}
+
+
+{% block contenido %}
+
+<div class="container" style="text-align: center;">
+
+<h2>Buscar Remeras: <form action="" method="post"></h2>
+
+    {% csrf_token %}
+
+    <input type="text" name="remera">
+
+    <input type="submit" value="Buscar">
+
+
+
+
+</form>
+
+
+    <h2>Resultado: </h2>
+        
+        <ul>
+            {% for remera in remeras %}
+            <li>
+            <strong>Color:</strong> {{remera.color}} <br>
+            <strong>Talle:</strong> {{remera.talle}} <br>
+            <strong>Estampado:</strong> {{remera.estampado}} <br>
+            <strong>Precio:</strong> ${{remera.precio}}
+            </li>
+        </ul>{% endfor %}
+    
+</div>    
+    
+{% endblock %}
